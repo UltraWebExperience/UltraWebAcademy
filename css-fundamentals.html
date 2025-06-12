@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Fundamentals - UltraWeb Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/ultraweb-logo.jpg" alt="UltraWeb Academy Logo" class="site-logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tools-page.html">Learning Paths</a></li>
+                    <li><a href="sandbox.html">Tools</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                    <li><a href="tools-page.html#community">Community</a></li> <!-- Link to Community section on tools-page.html -->
+                    <li><a href="premium.html">Premium</a></li> <!-- NEW: Link to Premium Page -->
+                    <li><a href="help.html">Help</a></li> <!-- NEW: Link to Help Page -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="lesson-hero-section">
+            <div class="container">
+                <p class="breadcrumb"><a href="tools-page.html">Learning Paths</a> / CSS Fundamentals</p>
+                <h2>Styling with CSS: Making Your Webpages Beautiful</h2>
+                <p class="tagline">Learn how to add color, layout, and visual flair to your HTML. Transform your blueprint into a masterpiece that captivates your audience.</p>
+                <div class="lesson-meta">
+                    <span>📚 Module 2</span>
+                    <span>⏱️ Approx. 3 hours</span>
+                    <span>⭐ Beginner Friendly</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-content-section content-section">
+            <div class="container">
+                <div class="lesson-block fade-in-up">
+                    <h3>1. What is CSS? The Web's Decorator</h3>
+                    <p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML. It dictates how HTML elements are to be displayed on screen, paper, or in other media. CSS saves a lot of work because it can control the layout and appearance of multiple web pages all at once from a single file.</p>
+                    <p>Imagine your HTML as the structural framework of a house. CSS is everything that makes it beautiful and livable: the paint colors, wallpaper, furniture arrangement, window dressings, and overall aesthetic. It allows you to separate content (HTML) from presentation (CSS), making your code cleaner, more manageable, and easier to update across an entire website.</p>
+                    <div class="code-example">
+                        <h4>Basic CSS Rule Structure</h4>
+                        <pre><code>
+/* This is a CSS comment. Comments help explain your code. */
+
+/* Selector: Targets HTML elements (e.g., 'p' for paragraphs) */
+p {
+    /* Declaration: Consists of a property and a value */
+    color: #34495e; /* Sets text color to dark grey */
+    font-family: "Segoe UI", sans-serif; /* Sets font family, with fallback */
+    font-size: 18px; /* Sets font size */
+    line-height: 1.6; /* Sets line spacing for readability */
+    margin-bottom: 1em; /* Space below paragraph */
+}
+
+/* Another example: styling a heading */
+h1 {
+    text-align: center; /* Centers the text */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Adds a subtle shadow */
+}
+                        </code></pre>
+                        <p class="example-description">A CSS rule consists of a **selector** (what to style) and a **declaration block** (curly braces containing one or more declarations, each being a property-value pair ending with a semicolon).</p>
+                        <a href="sandbox.html?lang=css&snippet=Basic-Button-Style" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+                </div>
+
+                <div class="lesson-block fade-in-up">
+                    <h3>2. How to Add CSS to HTML: The Three Methods</h3>
+                    <p>To apply your CSS styles to an HTML document, you have three primary methods. While all achieve the same goal, the external stylesheet method is highly recommended for most projects due to its efficiency and best practices.</p>
+                    <ul>
+                        <li>**Inline Styles:** Applied directly to an HTML element using the `style` attribute.
+                            <pre><code>&lt;p style="color: blue; font-size: 14px;"&gt;This text is blue.&lt;/p&gt;</code></pre>
+                            <p><em>Pros:</em> Quick for single-element styling. <em>Cons:</em> Not reusable, mixes content and presentation, hard to manage.</p>
+                        </li>
+                        <li>**Internal Styles:** Defined within a `&lt;style&gt;` tag located in the `&lt;head&gt;` section of an HTML document.
+                            <pre><code>&lt;head&gt;
+    &lt;style&gt;
+        h1 { color: green; }
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+                            <p><em>Pros:</em> Styles specific to one page, no extra file. <em>Cons:</em> Not reusable across multiple pages, clutters HTML.</p>
+                        </li>
+                        <li>**External Stylesheet (Recommended):** The most common and preferred method. CSS rules are written in a separate `.css` file (e.g., `styles.css`) and linked to the HTML using the `&lt;link&gt;` tag in the `&lt;head&gt;`. This allows you to apply the same styles across multiple pages.
+                            <pre><code>&lt;!-- In your HTML file (e.g., index.html) --&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt; &lt;!-- This links your CSS file --&gt;
+&lt;/head&gt;</code></pre>
+                            <p><em>Pros:</em> Reusable across whole site, clear separation of concerns, easier to manage large projects. <em>Cons:</em> Requires an extra file.</p>
+                        </li>
+                    </ul>
+                    <div class="code-example">
+                        <h4>External Stylesheet Example</h4>
+                        <pre><code>
+&lt;!-- HTML file (e.g., mypage.html) --&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Styled Page&lt;/title&gt;
+    &lt;link rel="stylesheet" href="my-styles.css"&gt; &lt;!-- Link to your CSS file --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, Styled World!&lt;/h1&gt;
+    &lt;p&gt;This text will be styled from an external file.&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;!-- my-styles.css --&gt;
+h1 {
+    color: #c0392b; /* Reddish color */
+    text-align: center;
+    font-size: 2.5em;
+}
+p {
+    border: 1px solid #2980b9; /* Blue border */
+    padding: 10px;
+    border-radius: 5px;
+}
+                        </code></pre>
+                        <p class="example-description">External stylesheets are the industry standard for web development, promoting modularity and efficient code management.</p>
+                        <a href="sandbox.html?lang=css&snippet=Responsive-Image" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+                </div>
+
+                <div class="lesson-block fade-in-up">
+                    <h3>3. Core Selectors: Targeting Elements Precisely</h3>
+                    <p>Selectors are patterns used to "find" (or select) the HTML elements you want to style. Mastering selectors is fundamental to effective CSS, allowing you to apply styles to specific elements, groups of elements, or elements based on their relationships.</p>
+                    <ul>
+                        <li>**Element Selector:** Selects all instances of a given HTML tag name (`p`, `h1`, `div`, `a`).
+                            <pre><code>p { color: blue; }</code></pre>
+                        </li>
+                        <li>**Class Selector:** Selects elements with a specific `class` attribute (`.my-class`). Can be applied to multiple elements and an element can have multiple classes.
+                            <pre><code>.highlight { background-color: yellow; }</code></pre>
+                        </li>
+                        <li>**ID Selector:** Selects a single, **unique** element with a specific `id` attribute (`#my-id`). IDs must be unique per page.
+                            <pre><code>#main-heading { font-size: 3em; }</code></pre>
+                        </li>
+                        <li>**Descendant Selector:** Selects an element that is a descendant (inside) of another element (e.g., `div p` selects all `p` elements inside a `div`).
+                            <pre><code>div p { margin-left: 20px; }</code></pre>
+                        </li>
+                        <li>**Child Selector:** Selects an element that is a direct child of another element (e.g., `ul > li` selects `li` elements that are direct children of `ul`).
+                            <pre><code>ul > li { list-style: none; }</code></pre>
+                        </li>
+                        <li>**Adjacent Sibling Selector:** Selects an element directly after another specific element (e.g., `h1 + p` selects the first `p` element immediately following an `h1`).
+                            <pre><code>h1 + p { margin-top: 0; }</code></pre>
+                        </li>
+                        <li>**General Sibling Selector:** Selects all elements that are siblings of a specified element (e.g., `h2 ~ p` selects all `p` elements that are siblings of an `h2`).
+                            <pre><code>h2 ~ p { font-style: italic; }</code></pre>
+                        </li>
+                        <li>**Universal Selector:** Selects all elements (`*`). Often used for global resets.
+                            <pre><code>* { box-sizing: border-box; }</code></pre>
+                        </li>
+                        <li>**Attribute Selector:** Selects elements with a specific attribute or attribute value (e.g., `a[target="_blank"]` selects all links that open in a new tab).
+                            <pre><code>a[target="_blank"] { color: orange; }</code></pre>
+                        </li>
+                    </ul>
+                    <div class="code-example">
+                        <h4>Complex CSS Selectors in Action</h4>
+                        <pre><code>
+/* HTML for context */
+&lt;div class="card-container"&gt;
+    &lt;div class="card" id="special-card"&gt;
+        &lt;h4&gt;Card Title&lt;/h4&gt;
+        &lt;p&gt;This is a card.&lt;/p&gt;
+        &lt;a href="#"&gt;Read More&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;p&gt;A paragraph outside the card.&lt;/p&gt;
+&lt;/div&gt;
+
+/* CSS */
+body { font-family: sans-serif; } /* Element selector */
+
+.card { /* Class selector */
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#special-card { /* ID selector */
+    background-color: #e6f7ff; /* Light blue background */
+}
+
+.card-container p { /* Descendant selector */
+    font-size: 0.9em;
+    color: #555;
+}
+
+.card > h4 { /* Child selector */
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+a[href="#"] { /* Attribute selector */
+    text-decoration: none;
+    color: #2ecc71; /* Green color for links */
+}
+                        </code></pre>
+                        <p class="example-description">Combining selectors allows for precise targeting, ensuring your styles are applied exactly where intended without affecting other parts of your page, leading to robust and maintainable CSS.</p>
+                        <a href="sandbox.html?lang=css&snippet=CSS-Grid-Layout-(2-Columns)" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+                </div>
+
+                <div class="lesson-block fade-in-up">
+                    <h3>4. The CSS Box Model: Understanding Layout Fundamentals</h3>
+                    <p>Understanding the CSS Box Model is fundamental to controlling the layout and spacing of elements on your webpage. Every HTML element can be thought of as a rectangular box, and this model describes how these boxes are rendered and interact with each other. The model consists of four conceptual parts, from innermost to outermost:</p>
+                    <ol>
+                        <li>**Content:** The actual content of the element (text, image, video). The width and height properties define the size of this content area.</li>
+                        <li>**Padding:** Transparent space that surrounds the content. It's inside the element's border and contributes to the total size of the box. You can set `padding-top`, `padding-right`, `padding-bottom`, `padding-left`, or a shorthand `padding`.</li>
+                        <li>**Border:** A line that goes around the padding and content. You can style its `width`, `style` (e.g., solid, dashed), and `color`.</li>
+                        <li>**Margin:** Transparent space outside the border. It creates separation between the element and other adjacent elements. You can set `margin-top`, `margin-right`, `margin-bottom`, `margin-left`, or a shorthand `margin`.</li>
+                    </ol>
+                    <div class="code-example">
+                        <h4>Visualizing the Box Model with CSS</h4>
+                        <pre><code>
+/* HTML for context */
+&lt;div class="box"&gt;This is my box content.&lt;/div&gt;
+
+/* CSS */
+.box {
+    width: 250px; /* Width of the content area */
+    height: 120px; /* Height of the content area */
+    background-color: #ecf0f1; /* Light grey background for content */
+    color: #2c3e50;
+    padding: 20px; /* Adds 20px space inside content (all sides) */
+    border: 5px solid #2980b9; /* A 5px solid blue border */
+    margin: 30px auto; /* 30px space outside, 'auto' centers horizontally */
+    text-align: center;
+    line-height: 120px; /* Centers text vertically if height is fixed */
+    font-size: 1.2em;
+
+    /* IMPORTANT: box-sizing property */
+    /* By default, width/height apply only to content.
+       border-box includes padding and border in width/height. */
+    box-sizing: border-box;
+}
+                        </code></pre>
+                        <p class="example-description">The `box-sizing: border-box;` property is highly recommended as it makes layout much more intuitive. With `border-box`, when you set a `width` and `height`, padding and border are included within those dimensions, preventing unexpected growth.</p>
+                        <a href="sandbox.html?lang=css&snippet=Center-a-Div-(Flexbox)" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+                </div>
+
+                <div class="lesson-block fade-in-up">
+                    <h3>5. Typography & Color: Enhancing Readability and Aesthetics</h3>
+                    <p>Styling text and choosing appropriate colors are crucial for both the aesthetics and the readability of your website. CSS offers extensive control over fonts, sizes, weights, and text decoration, as well as background and foreground colors. Thoughtful use of these properties can significantly enhance user experience.</p>
+                    <ul>
+                        <li>**`font-family`:** Specifies the typeface. Always provide a fallback generic family (e.g., `Arial, sans-serif`) in case the primary font isn't available. You can also import custom fonts (like Google Fonts).</li>
+                        <li>**`font-size`:** Sets the size of the text. Common units include `px` (pixels), `em` (relative to parent's font size), and `rem` (relative to root's font size).</li>
+                        <li>**`font-weight`:** Sets the thickness (boldness) of the characters (e.g., `normal`, `bold`, numeric values like `400` for normal, `700` for bold).</li>
+                        <li>**`color`:** Sets the text color. Can be specified using named colors (`red`), hexadecimal codes (`#FF0000`), RGB/RGBA values (`rgb(255,0,0)`), or HSL/HSLA values.</li>
+                        <li>**`background-color`:** Sets the background color of an element.</li>
+                        <li>**`text-align`:** Aligns text within its block element (`left`, `right`, `center`, `justify`).</li>
+                        <li>**`line-height`:** Sets the height of each line of text. A value between `1.4` and `1.8` is often recommended for good readability.</li>
+                        <li>**`text-decoration`:** Styles text lines (e.g., `none` to remove underlines from links, `underline`, `overline`, `line-through`).</li>
+                        <li>**`text-shadow`:** Adds shadow effects to text for visual depth.</li>
+                    </ul>
+                    <div class="code-example">
+                        <h4>Typography and Color in Practice</h4>
+                        <pre><code>
+/* HTML for context */
+&lt;h1 class="main-title"&gt;Styled UltraWeb Content&lt;/h1&gt;
+&lt;p class="styled-paragraph"&gt;This is some paragraph text with custom styling.&lt;/p&gt;
+&lt;div class="colorful-card"&gt;A vibrant section.&lt;/div&gt;
+
+/* CSS */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+}
+
+.main-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5em;
+    font-weight: 800;
+    color: #e74c3c; /* Bright red */
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.styled-paragraph {
+    font-size: 1.1em;
+    color: #2980b9; /* Blue text */
+    line-height: 1.7;
+    text-decoration: underline;
+    text-decoration-color: #f39c12; /* Orange underline */
+}
+
+.colorful-card {
+    background-color: #27ae60; /* Emerald green background */
+    color: white; /* White text */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+                        </code></pre>
+                        <p class="example-description">Effective use of typography and color can significantly enhance the user experience, convey brand identity, and make your content more inviting and readable.</p>
+                        <a href="sandbox.html?lang=css&snippet=Hover-Effect-(Grow-&-Shadow)" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+                </div>
+
+                <div class="lesson-block fade-in-up">
+                    <h3>6. Layout with Flexbox & Grid: Modern Positioning</h3>
+                    <p>Flexbox (Flexible Box Module) and CSS Grid Layout are powerful CSS modules that make creating complex and responsive layouts much easier than older methods. They are essential tools for modern web design.</p>
+                    <h4>Flexbox: For One-Dimensional Layouts</h4>
+                    <p>Flexbox is designed for layout in one dimension – either a row or a column. It makes distributing space among items in a container and aligning them a breeze. It's ideal for navigation bars, simple component arrangements, and alignment within a single line.</p>
+                    <ul>
+                        <li>`display: flex;`: Turns an element into a flex container. Its direct children become flex items.</li>
+                        <li>`justify-content`: Aligns items along the main axis (e.g., `flex-start`, `flex-end`, `center`, `space-between`).</li>
+                        <li>`align-items`: Aligns items along the cross-axis (perpendicular to the main axis, e.g., `flex-start`, `flex-end`, `center`, `stretch`).</li>
+                        <li>`flex-direction`: Sets the main axis (`row`, `column`, `row-reverse`, `column-reverse`).</li>
+                    </ul>
+                    <div class="code-example">
+                        <h4>Flexbox Example: Centering Items</h4>
+                        <pre><code>
+/* HTML for context */
+&lt;div class="flex-container"&gt;
+    &lt;div class="flex-item"&gt;Item 1&lt;/div&gt;
+    &lt;div class="flex-item"&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS */
+.flex-container {
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center;   /* Centers items vertically */
+    height: 150px; /* Give container a height for vertical centering to be visible */
+    border: 2px dashed #3498db;
+    background-color: #f9f9f9;
+    gap: 15px; /* Space between flex items */
+}
+.flex-item {
+    background-color: #3498db;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+                        </code></pre>
+                        <p class="example-description">Flexbox is perfect for arranging items in a single row or column and distributing space effectively.</p>
+                        <a href="sandbox.html?lang=css&snippet=Center-a-Div-(Flexbox)" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+
+                    <h4>CSS Grid: For Two-Dimensional Layouts</h4>
+                    <p>CSS Grid Layout is designed for two-dimensional layouts (rows and columns simultaneously). It's ideal for defining the overall page structure or complex component arrangements. You can create grids with explicit rows and columns, place items anywhere on the grid, and build responsive layouts easily.</p>
+                    <ul>
+                        <li>`display: grid;`: Turns an element into a grid container.</li>
+                        <li>`grid-template-columns`: Defines the column tracks (e.g., `1fr 1fr 1fr` for three equal columns, `200px 1fr` for a fixed and a flexible column). `fr` unit means "fractional unit."</li>
+                        <li>`grid-template-rows`: Defines the row tracks.</li>
+                        <li>`gap` (or `grid-gap`): Sets the spacing between grid items.</li>
+                        <li>`grid-column` / `grid-row`: Position items within the grid by spanning columns or rows.</li>
+                    </ul>
+                    <div class="code-example">
+                        <h4>CSS Grid Example: Responsive Columns</h4>
+                        <pre><code>
+/* HTML for context */
+&lt;div class="grid-layout"&gt;
+    &lt;div class="grid-item"&gt;Nav&lt;/div&gt;
+    &lt;div class="grid-item"&gt;Main Content&lt;/div&gt;
+    &lt;div class="grid-item"&gt;Sidebar&lt;/div&gt;
+    &lt;div class="grid-item"&gt;Footer&lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS */
+.grid-layout {
+    display: grid;
+    /* On large screens: Nav(fixed), Main(flexible), Sidebar(fixed) */
+    grid-template-columns: 150px 1fr 200px;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f0f8ff; /* Light blue background */
+    min-height: 300px;
+}
+.grid-item {
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .grid-layout {
+        /* On small screens: Stack items in a single column */
+        grid-template-columns: 1fr;
+    }
+}
+                        </code></pre>
+                        <p class="example-description">CSS Grid provides powerful control over two-dimensional layouts, making it ideal for overall page structure and complex component arrangements.</p>
+                        <a href="sandbox.html?lang=css&snippet=CSS-Grid-Layout-(2-Columns)" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+                </div>
+
+                <div class="lesson-block fade-in-up">
+                    <h3>7. Transitions & Animations: Bringing Elements to Life</h3>
+                    <p>CSS transitions and animations allow you to create smooth, dynamic visual effects on your website without needing JavaScript for simple movements. They make your user interface more engaging and provide feedback on user interactions.</p>
+                    <h4>Transitions: Smooth State Changes</h4>
+                    <p>Transitions define how an element changes from one state to another (e.g., changing color, size, or position) over a specified duration when its properties are altered (often on hover or focus).</p>
+                    <ul>
+                        <li>`transition-property`: The CSS property to which the transition will be applied (e.g., `background-color`, `transform`, `all`).</li>
+                        <li>`transition-duration`: How long the transition takes (e.g., `0.3s`, `500ms`).</li>
+                        <li>`transition-timing-function`: The speed curve of the transition (e.g., `ease`, `linear`, `ease-in-out`).</li>
+                        <li>`transition-delay`: How long to wait before the transition starts.</li>
+                    </ul>
+                    <div class="code-example">
+                        <h4>CSS Transition Example (Button Hover)</h4>
+                        <pre><code>
+/* HTML for context */
+/* &lt;button class="animated-btn"&gt;Hover Me&lt;/button&gt; */
+
+/* CSS */
+.animated-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out, transform 0.2s ease-out; /* Apply transition */
+}
+.animated-btn:hover {
+    background-color: #2ecc71; /* New background color on hover */
+    transform: translateY(-5px) scale(1.05); /* Lift and grow slightly */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+                        </code></pre>
+                        <p class="example-description">Transitions make simple interactive elements feel much more polished and professional, providing visual feedback to the user.</p>
+                        <a href="sandbox.html?lang=css&snippet=CSS-Transition-Example" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+
+                    <h4>Animations: Complex, Keyframe-Based Motion</h4>
+                    <p>CSS animations allow for more complex, multi-step movements using `@keyframes`. You define the different states of the animation (at percentages of its duration), and the browser smoothly transitions between them.</p>
+                    <ul>
+                        <li>`@keyframes`: Defines the animation sequence.</li>
+                        <li>`animation-name`: The name of the `@keyframes` rule to apply.</li>
+                        <li>`animation-duration`: How long one cycle of the animation takes.</li>
+                        <li>`animation-timing-function`: The speed curve for the animation.</li>
+                        <li>`animation-iteration-count`: How many times the animation should run (`infinite` for continuous).</li>
+                        <li>`animation-direction`: Whether the animation should play forward, backward, or alternate.</li>
+                        <li>`animation-fill-mode`: How styles are applied before/after animation (`forwards`, `backwards`, `both`).</li>
+                    </ul>
+                    <div class="code-example">
+                        <h4>CSS Animation Example (Bouncing Ball)</h4>
+                        <pre><code>
+/* HTML for context */
+/* &lt;div class="bouncing-ball"&gt;&lt;/div&gt; */
+
+/* CSS */
+.bouncing-ball {
+    width: 50px;
+    height: 50px;
+    background-color: #e74c3c; /* Red ball */
+    border-radius: 50%;
+    position: relative;
+    animation-name: bounce; /* Name of the animation */
+    animation-duration: 2s; /* 2 seconds per cycle */
+    animation-timing-function: ease-in-out; /* Smooth start/end */
+    animation-iteration-count: infinite; /* Loop forever */
+    animation-direction: alternate; /* Play forwards then backwards */
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); } /* Start at original position */
+    50% { transform: translateY(-100px); } /* Bounce up */
+    100% { transform: translateY(0); } /* Come back down */
+}
+                        </code></pre>
+                        <p class="example-description">Animations are perfect for creating eye-catching visual effects that run automatically or on trigger, adding a lively feel to your web pages.</p>
+                        <a href="sandbox.html?lang=css&snippet=CSS-Animation-Example" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+                </div>
+
+
+                <div class="lesson-navigation fade-in-up">
+                    <h4>Ready for Interactivity?</h4>
+                    <a href="javascript-basics.html" class="btn primary-btn">Continue to JavaScript Basics &rarr;</a>
+                    <p>Or, <a href="sandbox.html">practice more CSS in our interactive code sandbox</a>!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 UltraWeb Academy. All rights reserved. | Push Past Your Limits</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="mailto:ultrawebexperience@gmail.com">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="sandbox-script.js"></script>
+</body>
+</html>

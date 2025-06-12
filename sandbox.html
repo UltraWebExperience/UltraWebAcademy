@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Sandbox - UltraWeb Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/ultraweb-logo.jpg" alt="UltraWeb Academy Logo" class="site-logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tools-page.html">Learning Paths</a></li>
+                    <li><a href="sandbox.html">Tools</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                    <li><a href="tools-page.html#community">Community</a></li> <!-- Link to Community section on tools-page.html -->
+                    <li><a href="premium.html">Premium</a></li> <!-- NEW: Link to Premium Page -->
+                    <li><a href="help.html">Help</a></li> <!-- NEW: Link to Help Page -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="lesson-hero-section">
+            <div class="container">
+                <p class="breadcrumb"><a href="tools-page.html">Learning Paths</a> / Code Sandbox</p>
+                <h2>Your Interactive Code Playground</h2>
+                <p class="tagline">Write HTML, CSS, and JavaScript and see it instantly. Get essential code snippets at your fingertips – **Push Past Your Limits!**</p>
+            </div>
+        </section>
+
+        <section class="sandbox-section content-section">
+            <div class="container sandbox-container">
+                <div class="code-area">
+                    <div class="code-tabs">
+                        <div class="code-tab active" data-lang="html">HTML Editor</div>
+                        <div class="code-tab" data-lang="css">CSS Editor</div>
+                        <div class="code-tab" data-lang="js">JS Editor</div>
+                        <div class="code-tab code-library-tab" data-lang="library">Code Library</div>
+                    </div>
+                    <!-- The textarea and code library share the same container and are toggled by JS -->
+                    <textarea id="code-editor" spellcheck="false" placeholder="Start coding your website here..."></textarea>
+                    <div id="code-library-content" class="library-content" style="display: none;">
+                        <!-- Library content will be injected by JavaScript -->
+                    </div>
+                </div>
+                <div class="preview-area">
+                    <iframe id="live-preview" sandbox="allow-scripts allow-same-origin"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 UltraWeb Academy. All rights reserved. | Push Past Your Limits</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="mailto:ultrawebexperience@gmail.com">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="sandbox-script.js"></script>
+</body>
+</html>

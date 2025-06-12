@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Fundamentals - UltraWeb Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/ultraweb-logo.jpg" alt="UltraWeb Academy Logo" class="site-logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tools-page.html">Learning Paths</a></li>
+                    <li><a href="sandbox.html">Tools</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                    <li><a href="tools-page.html#community">Community</a></li> <!-- Link to Community section on tools-page.html -->
+                    <li><a href="premium.html">Premium</a></li> <!-- NEW: Link to Premium Page -->
+                    <li><a href="help.html">Help</a></li> <!-- NEW: Link to Help Page -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="lesson-hero-section">
+            <div class="container">
+                <p class="breadcrumb"><a href="tools-page.html">Learning Paths</a> / HTML Fundamentals</p>
+                <h2>Mastering HTML: The Foundation of the Web</h2>
+                <p class="tagline">Dive into the language that structures all websites. Learn to build robust and meaningful web content, laying the groundwork for visually stunning and interactive experiences.</p>
+                <div class="lesson-meta">
+                    <span>📚 Module 1</span>
+                    <span>⏱️ Approx. 2 hours</span>
+                    <span>⭐ Beginner Friendly</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-content-section content-section">
+            <div class="container">
+                <div class="lesson-block fade-in-up">
+                    <h3>1. What is HTML? The Blueprint of the Web</h3>
+                    <p>HTML (HyperText Markup Language) is the backbone of every website. It's not a programming language but a markup language that defines the structure and meaning of web content. Think of it as the blueprint of a house: it lays out where the rooms, walls, and windows are, but doesn't dictate the paint color or interior design.</p>
+                    <p>Every piece of content you see on a webpage—from headings and paragraphs to images and videos—is placed and organized using HTML. Without HTML, a web browser wouldn't know how to display anything beyond raw text, making it essential for giving structure to your digital creations.</p>
+                    <div class="code-example">
+                        <h4>Basic HTML Document Structure</h4>
+                        <pre><code>
+&lt;!DOCTYPE html&gt; &lt;!-- Declares document type as HTML5 --&gt;
+&lt;html lang="en"&gt; &lt;!-- Root element, declares page language --&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt; &lt;!-- Character encoding --&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;!-- Responsive view --&gt;
+    &lt;title&gt;My First HTML Page&lt;/title&gt; &lt;!-- Title shown in browser tab --&gt;
+    &lt;!-- CSS links and other metadata go here --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- All visible content goes here --&gt;
+    &lt;h1&gt;Welcome to My Website!&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>
+                        <p class="example-description">This boilerplate code is the starting point for every HTML file. It includes essential tags like `html`, `head` (for metadata), and `body` (for visible content).</p>
+                        <a href="sandbox.html?lang=html&snippet=HTML-Boilerplate" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+                </div>
+
+                <div class="lesson-block fade-in-up">
+                    <h3>2. Essential HTML Elements for Content</h3>
+                    <p>HTML uses "elements" (represented by tags) to mark up different types of content. Each tag has a specific meaning and purpose. Understanding common tags is crucial for building any webpage, ensuring your content is displayed as intended and accessible to all users.</p>
+                    <ul>
+                        <li>**Headings (`&lt;h1&gt;` to `&lt;h6&gt;`):** Define hierarchical headings, crucial for SEO and readability. `&lt;h1&gt;` is the most important, `&lt;h6&gt;` the least.</li>
+                        <li>**Paragraphs (`&lt;p&gt;`):** For blocks of text. The most fundamental element for textual content.</li>
+                        <li>**Links (`&lt;a&gt;`):** Create hyperlinks to other pages or resources. The `href` attribute specifies the destination, and `target="_blank"` opens in a new tab.</li>
+                        <li>**Images (`&lt;img&gt;`):** Embed images into your document. Requires `src` (source URL) and `alt` (alternative text for accessibility and SEO) attributes.</li>
+                        <li>**Lists (`&lt;ul&gt;`, `&lt;ol&gt;`, `&lt;li&gt;`):** Organize information. Unordered lists (`ul`) use bullet points, while ordered lists (`ol`) use numbers, with list items (`li`) inside.</li>
+                        <li>**Divisions (`&lt;div&gt;`):** A generic block-level container for grouping elements. Primarily used with CSS for layout purposes when no other semantic tag is appropriate.</li>
+                        <li>**Spans (`&lt;span&gt;`):** A generic inline container for applying styles or JavaScript to a small piece of text within a larger block.</li>
+                    </ul>
+                    <div class="code-example">
+                        <h4>Examples of Common HTML Elements</h4>
+                        <pre><code>
+&lt;h2&gt;About UltraWeb Academy&lt;/h2&gt;
+&lt;p&gt;Learn to code and &lt;strong&gt;push past your limits!&lt;/strong&gt; We offer cutting-edge web development education.&lt;/p&gt;
+&lt;a href="https://example.com" target="_blank"&gt;Visit Our Blog&lt;/a&gt;
+&lt;img src="https://placehold.co/150x100?text=WebDev" alt="A simple web development icon" style="width:150px; height:auto;"&gt;
+
+&lt;h3&gt;What You'll Learn:&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;HTML Basics: Structure your content.&lt;/li&gt;
+    &lt;li&gt;CSS Styling: Make it beautiful.&lt;/li&gt;
+    &lt;li&gt;JavaScript Fun: Add interactivity.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Your First Steps:&lt;/h3&gt;
+&lt;ol&gt;
+    &lt;li&gt;Understand HTML structure.&lt;/li&gt;
+    &lt;li&gt;Explore common elements.&lt;/li&gt;
+    &lt;li&gt;Practice in our sandbox.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div style="background-color: #f0f0f0; padding: 15px; border-radius: 8px;"&gt;
+    &lt;p&gt;This is a &lt;span style="color: blue; font-weight: bold;"&gt;grouped section&lt;/span&gt; of content.&lt;/p&gt;
+&lt;/div&gt;
+                        </code></pre>
+                        <p class="example-description">These elements form the foundation of any content-rich webpage. Pay attention to how different tags affect the display of content and how they're used to build a web page.</p>
+                        <a href="sandbox.html?lang=html&snippet=Basic-Image-Tag" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+                </div>
+
+                <div class="lesson-block fade-in-up">
+                    <h3>3. Attributes: Modifying and Enhancing Elements</h3>
+                    <p>Attributes provide crucial extra information about HTML elements, modifying their default behavior or appearance. They are always specified in the opening tag and come in name/value pairs (e.g., `name="value"`). Attributes are vital for linking resources, providing accessibility information, and enabling CSS styling and JavaScript interaction.</p>
+                    <ul>
+                        <li>`id`: A **unique** identifier for a single HTML element on a page. Used to target specific elements with CSS or JavaScript.</li>
+                        <li>`class`: A **non-unique** identifier used for grouping elements that share common styling or behavior. Multiple elements can have the same class, and one element can have multiple classes. Essential for CSS frameworks and efficient styling.</li>
+                        <li>`src`: Specifies the URL source for embedded content like images (`&lt;img&gt;`) or scripts (`&lt;script&gt;`).</li>
+                        <li>`href`: Specifies the URL destination for hyperlinks (`&lt;a&gt;`) or the location of stylesheets (`&lt;link&gt;`).</li>
+                        <li>`alt`: Provides **alternative text** for images. Crucial for accessibility (screen readers) and SEO (when images cannot be displayed).</li>
+                        <li>`style`: Allows inline CSS styling directly on an element. While convenient for quick tests, it's generally discouraged for complex styling.</li>
+                        <li>`target`: For links (`&lt;a&gt;`), specifies where to open the linked document (e.g., `_blank` for a new browser tab/window).</li>
+                        <li>`data-*` attributes: Custom data attributes (e.g., `data-info="value"`) used to store custom data private to the page or application, often accessed by JavaScript.</li>
+                    </ul>
+                    <div class="code-example">
+                        <h4>Attributes in Action: Customizing HTML Elements</h4>
+                        <pre><code>
+&lt;!-- HTML --&gt;
+&lt;button id="submitBtn" class="primary-action-button" data-action="send-form"&gt;
+    Send Data
+&lt;/button&gt;
+
+&lt;img src="images/logo.png" alt="UltraWeb Academy Logo" width="150" height="auto" class="responsive-img"&gt;
+
+&lt;p style="color: #27ae60; font-size: 1.2em;"&gt;
+    This text has custom inline styles for a quick demonstration.
+&lt;/p&gt;
+
+&lt;a href="https://discord.gg/your_invite" target="_blank" rel="noopener noreferrer"&gt;
+    Join Our Community!
+&lt;/a&gt;
+                        </code></pre>
+                        <p class="example-description">Attributes like `id` and `class` are fundamental for bridging HTML with CSS and JavaScript, enabling dynamic and well-styled web pages. `rel="noopener noreferrer"` for `target="_blank"` is a security best practice.</p>
+                        <a href="sandbox.html?lang=html&snippet=Hyperlink-Button" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+                </div>
+
+                <div class="lesson-block fade-in-up">
+                    <h3>4. Semantic HTML5: Structuring for Meaning & SEO</h3>
+                    <p>HTML5 introduced new semantic elements that provide more meaningful structure to your web pages, moving beyond generic `&lt;div&gt;` tags. Using semantic tags not only makes your code easier to read for humans but also significantly helps search engines (for SEO) and assistive technologies (like screen readers for accessibility) understand the content hierarchy and purpose better. This is fundamental for modern, high-quality web development.</p>
+                    <ul>
+                        <li>`&lt;header&gt;`: Represents introductory content, typically at the top of a document or a section, often containing navigational aids, logos, and headings.</li>
+                        <li>`&lt;nav&gt;`: Contains navigation links, usually for the main navigation of the site.</li>
+                        <li>`&lt;main&gt;`: Represents the dominant content of the `&lt;body&gt;`. There should only be one `&lt;main&gt;` element per document.</li>
+                        <li>`&lt;section&gt;`: A generic standalone section of a document, often with a heading. Use it to group related content.</li>
+                        <li>`&lt;article&gt;`: Represents a self-contained composition in a document, such as a blog post, a news story, a comment, or an independent item of content. It should be distributable and reusable independently.</li>
+                        <li>`&lt;aside&gt;`: Content indirectly related to the main content, but distinct from it. Often used for sidebars, pull quotes, or advertisements.</li>
+                        <li>`&lt;footer&gt;`: Represents a footer for its nearest sectioning content or the root element. Typically contains copyright information, contact details, or related links.</li>
+                        <li>`&lt;figure&gt;` and `&lt;figcaption&gt;`: Used to encapsulate content that is self-contained (like images, diagrams, code snippets) and provides a caption.</li>
+                    </ul>
+                    <div class="code-example">
+                        <h4>Building a Semantic Page Structure for Better Clarity</h4>
+                        <pre><code>
+&lt;header&gt;
+    &lt;img src="images/logo.png" alt="Site Logo"&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Our Featured Products&lt;/h2&gt;
+        &lt;p&gt;Explore our latest offerings.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;article&gt;
+        &lt;h3&gt;The Art of Semantic HTML&lt;/h3&gt;
+        &lt;p&gt;Understanding tags like &lt;code&gt;&amp;lt;article&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;section&amp;gt;&lt;/code&gt; is key.&lt;/p&gt;
+        &lt;figure&gt;
+            &lt;img src="https://placehold.co/400x200?text=Code+Structure" alt="Diagram of code structure"&gt;
+            &lt;figcaption&gt;A typical semantic HTML page layout.&lt;/figcaption&gt;
+        &lt;/figure&gt;
+    &lt;/article&gt;
+
+    &lt;aside&gt;
+        &lt;h4&gt;Related Links&lt;/h4&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;CSS Best Practices&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;&copy; 2025 Your Website.&lt;/p&gt;
+&lt;/footer&gt;
+                        </code></pre>
+                        <p class="example-description">Using these tags ensures your website has a logical and accessible structure, which is crucial for modern web development practices and improved user experience.</p>
+                        <a href="sandbox.html?lang=html&snippet=Table-Structure" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+                </div>
+
+                <div class="lesson-block fade-in-up">
+                    <h3>5. Forms: Collecting User Input</h3>
+                    <p>HTML forms are essential for collecting user input. They allow users to submit information to a server. Forms are made up of various input elements like text fields, checkboxes, radio buttons, dropdowns, and submission buttons.</p>
+                    <ul>
+                        <li>`&lt;form&gt;`: The container for all form elements. Its `action` attribute specifies where to send the data, and `method` (GET/POST) specifies how.</li>
+                        <li>`&lt;input&gt;`: The most versatile form element. Its `type` attribute defines its behavior (e.g., `text`, `email`, `password`, `submit`, `checkbox`, `radio`).</li>
+                        <li>`&lt;label&gt;`: Provides a caption for an item in a user interface. Crucial for accessibility; link it to an input with the `for` and `id` attributes.</li>
+                        <li>`&lt;textarea&gt;`: For multi-line text input.</li>
+                        <li>`&lt;select&gt;` and `&lt;option&gt;`: Create dropdown lists.</li>
+                        <li>`&lt;button&gt;`: A clickable button, often used for `type="submit"`.</li>
+                    </ul>
+                    <div class="code-example">
+                        <h4>A Basic Contact Form in HTML</h4>
+                        <pre><code>
+&lt;form action="/submit-contact" method="POST"&gt;
+    &lt;div&gt;
+        &lt;label for="fullName"&gt;Your Name:&lt;/label&gt;
+        &lt;input type="text" id="fullName" name="user_name" required&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="userEmail"&gt;Your Email:&lt;/label&gt;
+        &lt;input type="email" id="userEmail" name="user_email" required&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="subject"&gt;Subject:&lt;/label&gt;
+        &lt;select id="subject" name="subject_matter"&gt;
+            &lt;option value="general"&gt;General Inquiry&lt;/option&gt;
+            &lt;option value="support"&gt;Support Request&lt;/option&gt;
+            &lt;option value="feedback"&gt;Feedback&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="message"&gt;Message:&lt;/label&gt;
+        &lt;textarea id="message" name="user_message" rows="5" required&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type="checkbox" id="newsletter" name="newsletter_signup" value="yes"&gt;
+        &lt;label for="newsletter"&gt;Sign me up for the newsletter!&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;button type="submit"&gt;Send Message&lt;/button&gt;
+&lt;/form&gt;
+                        </code></pre>
+                        <p class="example-description">Forms are interactive and crucial for user engagement. Note the `for` and `id` connection for accessibility, and the `name` attribute which is used to send data to the server.</p>
+                        <a href="sandbox.html?lang=html&snippet=HTML-Form-(Simple)" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+                </div>
+
+                <div class="lesson-block fade-in-up">
+                    <h3>6. Multimedia: Images, Audio, and Video</h3>
+                    <p>HTML provides elements to embed various types of multimedia content directly into your web pages, making them richer and more engaging. Correctly using these elements ensures broad compatibility and accessibility.</p>
+                    <ul>
+                        <li>**`&lt;img&gt;`:** For embedding images. Crucial attributes include `src` (source URL), `alt` (alternative text for accessibility), `width`, and `height` (for layout, though CSS is often preferred for sizing).</li>
+                        <li>**`&lt;audio&gt;`:** For embedding audio content. Includes `src` (source file), `controls` (displays browser's default playback controls), `autoplay`, `loop`, and `muted`. You can include multiple `&lt;source&gt;` tags for different audio formats.</li>
+                        <li>**`&lt;video&gt;`:** For embedding video content. Similar to `&lt;audio&gt;`, with `src`, `controls`, `autoplay`, `loop`, `muted`, `width`, `height`, and `poster` (an image to show before video loads). Multiple `&lt;source&gt;` tags are common for different video formats.</li>
+                    </ul>
+                    <div class="code-example">
+                        <h4>Embedding Multimedia Content</h4>
+                        <pre><code>
+&lt;!-- An Image --&gt;
+&lt;img src="images/web-design.jpg" alt="A stylized image representing web design" style="max-width:100%; height:auto; border-radius:10px;"&gt;
+&lt;p&gt;&lt;em&gt;A visually engaging image to capture attention.&lt;/em&gt;&lt;/p&gt;
+
+&lt;!-- An Audio Player --&gt;
+&lt;h4&gt;Listen to Our Intro Music:&lt;/h4&gt;
+&lt;audio controls&gt;
+    &lt;source src="audio/intro.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio/intro.ogg" type="audio/ogg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+
+&lt;!-- A Video Player --&gt;
+&lt;h4&gt;Watch Our Academy Overview:&lt;/h4&gt;
+&lt;video width="320" height="240" controls poster="images/video-poster.jpg"&gt;
+    &lt;source src="videos/academy-overview.mp4" type="video/mp4"&gt;
+    &lt;source src="videos/academy-overview.webm" type="video/webm"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+                        </code></pre>
+                        <p class="example-description">Always provide `alt` text for images and fallback content for audio/video to ensure accessibility and graceful degradation across different browsers and devices.</p>
+                        <a href="sandbox.html?lang=html&snippet=Video-Embed" class="btn secondary-btn small-btn try-sandbox-btn">Try in Sandbox</a>
+                    </div>
+                </div>
+
+                <div class="lesson-navigation fade-in-up">
+                    <h4>Ready for the next step?</h4>
+                    <a href="css-fundamentals.html" class="btn primary-btn">Continue to CSS Fundamentals &rarr;</a>
+                    <p>Or, <a href="sandbox.html">jump directly to the Code Sandbox</a> to practice more HTML!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 UltraWeb Academy. All rights reserved. | Push Past Your Limits</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="mailto:ultrawebexperience@gmail.com">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="sandbox-script.js"></script>
+</body>
+</html>

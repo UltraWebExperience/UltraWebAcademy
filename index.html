@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UltraWeb Academy - Push Past Your Limits</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to Google Fonts for a modern look, Poppins for headings, Inter for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <!-- Your UltraWeb Academy logo, placed in the 'images' folder -->
+                    <img src="images/ultraweb-logo.jpg" alt="UltraWeb Academy Logo" class="site-logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tools-page.html">Learning Paths</a></li>
+                    <li><a href="sandbox.html">Tools</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="premium.html">Premium</a></li> <!-- NEW: Link to Premium Page -->
+                    <li><a href="tools-page.html#community">Community</a></li> <!-- Link to Community section on tools-page.html -->
+                    <li><a href="help.html">Help</a></li> <!-- NEW: Link to Help Page -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section section-padding">
+            <div class="container">
+                <h2>Your Go-To Guide for Mastering Web Design</h2>
+                <p class="tagline">Push past your limits and build amazing websites from scratch, with easy-to-follow tutorials and practical tools.</p>
+                <a href="tools-page.html" class="btn primary-btn">Start Learning Now</a>
+            </div>
+        </section>
+
+        <section class="features-section section-padding">
+            <div class="container">
+                <h3 class="text-center">What You'll Learn & Achieve</h3>
+                <p class="section-description">Unlock the power of web creation with our comprehensive, beginner-friendly curriculum designed to take you from zero to hero.</p>
+                <div class="feature-grid">
+                    <div class="feature-card fade-in-up">
+                        <h4>HTML Fundamentals</h4>
+                        <p>Master the building blocks of the web. Structure your content semantically and efficiently for search engines and accessibility.</p>
+                        <a href="html-basics.html" class="learn-more">Learn More &rarr;</a>
+                    </div>
+                    <div class="feature-card fade-in-up" style="animation-delay: 0.1s;">
+                        <h4>CSS Styling & Layout</h4>
+                        <p>Transform your designs. Dive into styling, responsive layouts using Flexbox & Grid, and create stunning visual experiences.</p>
+                        <a href="css-fundamentals.html" class="learn-more">Learn More &rarr;</a>
+                    </div>
+                     <div class="feature-card fade-in-up" style="animation-delay: 0.2s;">
+                        <h4>Interactive JavaScript</h4>
+                        <p>Bring your sites to life. Understand core programming concepts, DOM manipulation, and add dynamic functionality.</p>
+                        <a href="javascript-basics.html" class="learn-more">Learn More &rarr;</a>
+                    </div>
+                    <div class="feature-card fade-in-up" style="animation-delay: 0.3s;">
+                        <h4>Practical Tools & Sandbox</h4>
+                        <p>Access our curated set of interactive tools and an immersive code sandbox to practice, experiment, and build in real-time.</p>
+                        <a href="sandbox.html" class="learn-more">Explore Tools &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section with Image Gallery Carousel -->
+        <section id="how-it-works" class="how-it-works-section section-padding">
+            <div class="container">
+                <h3 class="text-center">How UltraWeb Academy Works</h3>
+                <p class="section-description">Our streamlined process makes learning web development straightforward and effective. No prior experience needed!</p>
+                <div class="steps-grid">
+                    <div class="step-card fade-in-up">
+                        <div class="icon">📝</div>
+                        <h4>1. Follow Learning Paths</h4>
+                        <p>Start with HTML, then move to CSS and JavaScript. Our structured modules guide you step-by-step.</p>
+                    </div>
+                    <div class="step-card fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="icon">💡</div>
+                        <h4>2. Understand Concepts</h4>
+                        <p>We provide clear explanations and practical examples for every topic, making complex ideas easy to grasp.</p>
+                    </div>
+                    <div class="step-card fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="icon">💻</div>
+                        <h4>3. Practice in Sandbox</h4>
+                        <p>Use our interactive code sandbox to write code, see live results, and get instant snippets for common tasks.</p>
+                    </div>
+                    <div class="step-card fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="icon">🚀</div>
+                        <h4>4. Build Your Projects</h4>
+                        <p>Apply your knowledge to build real-world projects. Turn your ideas into functional, beautiful websites.</p>
+                    </div>
+                </div>
+                <!-- Image Gallery Carousel Structure -->
+                <div class="image-gallery-carousel fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="carousel-track" id="how-it-works-carousel-track">
+                        <!-- Ensure these images are in your 'images/' folder -->
+                        <img src="images/structured-learning.jpg" alt="Structured learning flow with clear steps for web development." class="carousel-image" loading="lazy">
+                        <img src="images/interactive-practice.jpg" alt="Screenshot of an interactive code sandbox with live preview." class="carousel-image" loading="lazy">
+                        <img src="images/build-projects.jpg" alt="Visual representation of a completed website project." class="carousel-image" loading="lazy">
+                    </div>
+                    <div class="carousel-dots" id="how-it-works-carousel-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section with Sliding Carousel -->
+        <section id="testimonials" class="testimonials-section section-padding">
+            <div class="container">
+                <h3 class="text-center">What Our Learners Say</h3>
+                <p class="section-description">Don't just take our word for it. Hear from real beginners who pushed past their limits with UltraWeb Academy!</p>
+
+                <div class="testimonial-carousel-container">
+                    <div class="testimonial-carousel-track" id="testimonial-carousel-track">
+                        <div class="testimonial-slide">
+                            <p class="testimonial-text">"UltraWeb Academy transformed my understanding of web development. The sandbox is revolutionary, and the explanations are incredibly clear. I finally feel confident building websites!"</p>
+                            <p class="testimonial-author">- Alex M., Aspiring Developer</p>
+                        </div>
+                        <div class="testimonial-slide">
+                            <p class="testimonial-text">"I always thought coding was too hard, but UltraWeb Academy broke it down perfectly. The instant code snippets are a lifesaver. Highly recommend for any beginner!"</p>
+                            <p class="testimonial-author">- Sarah L., Small Business Owner</p>
+                        </div>
+                        <div class="testimonial-slide">
+                            <p class="testimonial-text">"The structured learning paths and practical examples made all the difference. I built my first portfolio site in weeks thanks to UltraWeb Academy."</p>
+                            <p class="testimonial-author">- Chris P., Creative Professional</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-dots" id="testimonial-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help To Build Section (Now linked to Premium Page) -->
+        <section id="build-service" class="help-to-build-section section-padding">
+            <div class="container">
+                <h3 class="text-center">Need a Custom Website Built?</h3>
+                <p class="section-description">Even with our powerful tools, sometimes you just need a professional touch. Let us build your dream website for you. We offer bespoke web development services tailored to your specific vision and needs.</p>
+                <a href="premium.html" class="btn primary-btn">Explore Premium Build Service</a> <!-- Link to Premium Page -->
+                <p class="disclaimer">*(This service is part of UltraWeb Academy's premium offerings. Click above for details on features and pricing!)*</p>
+            </div>
+        </section>
+
+        <section id="community" class="call-to-action-section section-padding">
+            <div class="container">
+                <h3>Ready to Create Your First Website?</h3>
+                <p>Join our community of aspiring web developers and push past your limits today!</p>
+                <div class="social-links">
+                    <a href="https://discord.gg/DWgE5hhd" target="_blank" rel="noopener noreferrer" class="btn secondary-btn small-btn"><span class="icon">💬</span> Join Discord</a>
+                    <a href="https://t.me/UltraWebExperience" target="_blank" rel="noopener noreferrer" class="btn secondary-btn small-btn"><span class="icon">✈️</span> Join Telegram</a>
+                    <a href="mailto:ultrawebexperience@gmail.com" class="btn secondary-btn small-btn"><span class="icon">📧</span> Email Us</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 UltraWeb Academy. All rights reserved. | Push Past Your Limits</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="mailto:ultrawebexperience@gmail.com">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="sandbox-script.js"></script>
+</body>
+</html>
