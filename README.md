@@ -22,12 +22,12 @@ Explore UltraWeb Academy live on GitHub Pages:
 
 ## 🔗 Connect with Us
 Join our growing community and stay updated!
-* **Discord:** [Your Discord Invite Link Here] *(Replace with your actual Discord invite link)*
-* **Telegram:** [Your Telegram Group Link Here] *(Replace with your actual Telegram group link)*
+* **Discord:** https://discord.gg/DWgE5hhd
+* **Telegram:** https://t.me/UltraWebExperience
 
 ## 📧 Contact
 For inquiries, collaborations, or premium service details, please contact us at:
-[your.email@example.com](mailto:your.email@example.com) *(Replace with your actual email address)*
+ultrawebexperience@gmail.com
 
 ## 📄 License
 This project is open-sourced under the MIT License.
